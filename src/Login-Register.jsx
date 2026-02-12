@@ -4,7 +4,7 @@ import './Login-Register.css'
 
 function LoginRegister(){
     return(
-        <div className="login-page-container" hidden>
+        <div className="login-page-container">
             
             <Login />
 
