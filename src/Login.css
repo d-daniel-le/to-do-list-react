@@ -1,0 +1,9 @@
+.login-username p{
+    margin: 0;
+    margin-left: 2px;
+}
+
+.login-password p{
+    margin-bottom: 0;
+    margin-left: 2px;
+}

@@ -1,0 +1,9 @@
+.register-username p{
+    margin: 0;
+    margin-left: 2px;
+}
+
+.register-password p{
+    margin-bottom: 0;
+    margin-left: 2px;
+}

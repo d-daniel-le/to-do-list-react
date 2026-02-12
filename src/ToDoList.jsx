@@ -1,6 +1,8 @@
+import './ToDoList.css'
+
 function ToDoList(){
     return (
-        <form className="to-do">
+        <form className="to-do" hidden>
             <h2>To Do List</h2>
 
             <div className="title">

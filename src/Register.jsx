@@ -1,3 +1,5 @@
+import './Register.css'
+
 function Register(){
     return(
 
@@ -12,7 +14,7 @@ function Register(){
 
             <div className="register-password">
                 <p>Password</p>
-                <input type="password" />
+                <input type="password" placeholder='Password'/>
             </div>
             
             <button className="register-page-btn">Register</button>

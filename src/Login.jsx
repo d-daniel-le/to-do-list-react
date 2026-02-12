@@ -1,3 +1,5 @@
+import './Login.css'
+
 function Login(){
     return(
 
@@ -12,7 +14,7 @@ function Login(){
 
             <div className="login-password">
                 <p>Password</p>
-                <input type="password" />
+                <input type="password" placeholder='Password'/>
             </div>
 
             <button className="login-page-btn">Login</button>
