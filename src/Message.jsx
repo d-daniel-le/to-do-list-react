@@ -1,9 +1,9 @@
 import './Message.css'
 
-function Message(){
+function Message(props){
     return(
-        <div className="message-container"hidden>
-            <p>Message goes here</p>
+        <div className="message-container" hidden={props.messageHidden}>
+            <p>{props.message}</p>
             <button>Back to ToDo page</button>
         </div>
     )

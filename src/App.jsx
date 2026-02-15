@@ -6,14 +6,23 @@ import ToDoList from './ToDoList'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [message, setMessage] = useState("Message goes here")
+  const [token, setToken] = useState("")
+  const [headerLoginBtn, setHeaderLoginBtn] = useState(false)
+  const [headerLogoutBtn, setHeaderLogoutBtn] = useState(true)
+  const [logRegHidden, setLogRegHidden] = useState(false)
+  const [toDoHidden, setToDoHidden] = useState(true)
+  const [messageHidden, setMessageHidden] = useState(true)
+
+
+  // localStorage.setItem(token)
 
   return (
     <>
-      <Header />
-      <LoginRegister />      
-      <Message />
-      <ToDoList />
+      <Header headerLoginBtn={headerLoginBtn} headerLogoutBtn={headerLogoutBtn}/>
+      <LoginRegister setMessage={setMessage} token={token} setToken={setToken} logRegHidden={logRegHidden} setLogRegHidden={setLogRegHidden} setHeaderLoginBtn={setHeaderLoginBtn} setHeaderLogoutBtn={setHeaderLogoutBtn} setToDoHidden={setToDoHidden} setMessageHidden={setMessageHidden}/>      
+      <Message message={message} messageHidden={messageHidden}/>
+      <ToDoList token={token} toDoHidden={toDoHidden}/>
     </>
   )
 }

@@ -1,16 +1,18 @@
+import { useState } from "react"
 import Login from "./Login"
 import Register from "./Register"
 import './Login-Register.css'
 
-function LoginRegister(){
+function LoginRegister(props){
+
     return(
-        <div className="login-page-container">
+        <div className="login-page-container" hidden={props.logRegHidden}>
             
             <Login />
 
             <p>OR</p>
             
-            <Register />
+            <Register setMessage={props.setMessage} token={props.token} setToken={props.setToken} setLogRegHidden={props.setLogRegHidden} setHeaderLoginBtn={props.setHeaderLoginBtn} setHeaderLogoutBtn={props.setHeaderLogoutBtn} setToDoHidden={props.setToDoHidden} setMessageHidden={props.setMessageHidden}/>
 
 
         </div>

@@ -1,8 +1,8 @@
 import './ToDoList.css'
 
-function ToDoList(){
+function ToDoList(props){
     return (
-        <form className="to-do" hidden>
+        <form className="to-do" hidden={props.toDoHidden}>
             <h2>To Do List</h2>
 
             <div className="title">

@@ -1,12 +1,13 @@
 import './Header.css'
 
-function Header(){
+function Header(props){
+
     return (
         <header className="header">
 
             <h1>To-Do List</h1>
-            <button className="header-login-btn">Login</button>
-            <button className="header-logout-btn" hidden>Logout</button>
+            <button className="header-login-btn" hidden={props.headerLoginBtn}>Login</button>
+            <button className="header-logout-btn" hidden={props.headerLogoutBtn}>Logout</button>
             
         </header>
     )
