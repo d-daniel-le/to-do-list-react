@@ -8,7 +8,7 @@ function LoginRegister(props){
     return(
         <div className="login-page-container" hidden={props.logRegHidden}>
             
-            <Login />
+            <Login setMessage={props.setMessage} token={props.token} setToken={props.setToken} setLogRegHidden={props.setLogRegHidden} setHeaderLoginBtn={props.setHeaderLoginBtn} setHeaderLogoutBtn={props.setHeaderLogoutBtn} setToDoHidden={props.setToDoHidden} setMessageHidden={props.setMessageHidden}/>
 
             <p>OR</p>
             

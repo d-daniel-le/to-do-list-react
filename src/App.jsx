@@ -19,7 +19,7 @@ function App() {
 
   return (
     <>
-      <Header headerLoginBtn={headerLoginBtn} headerLogoutBtn={headerLogoutBtn}/>
+      <Header headerLoginBtn={headerLoginBtn} headerLogoutBtn={headerLogoutBtn} setLogRegHidden={setLogRegHidden}/>
       <LoginRegister setMessage={setMessage} token={token} setToken={setToken} logRegHidden={logRegHidden} setLogRegHidden={setLogRegHidden} setHeaderLoginBtn={setHeaderLoginBtn} setHeaderLogoutBtn={setHeaderLogoutBtn} setToDoHidden={setToDoHidden} setMessageHidden={setMessageHidden}/>      
       <Message message={message} messageHidden={messageHidden}/>
       <ToDoList token={token} toDoHidden={toDoHidden}/>
