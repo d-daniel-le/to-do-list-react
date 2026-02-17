@@ -8,7 +8,6 @@ function ToDoListItems(props){
     const [itemLabelHidden, setItemLabelHidden] = useState(false);
     const [newTitle, setNewTitle] = useState(props.toDo.title);
     const [newDescription, setNewDescription] = useState(props.toDo.description);
-    const [checkedComplete, setCheckedComplete] = useState(props.toDo.completed);
 
     const deleteToDoItem = async () => {
         try{
@@ -80,13 +79,12 @@ function ToDoListItems(props){
 
         }
         catch (error){
-            console.log(error)
+            console.log(error);
         }
 
     }
 
-    const completeToDoItem  = async (event) =>{
-        event.preventDefault();
+    const completeToDoItem  = async (complete) =>{
 
         try{
             const responseAPI = await fetch(`http://localhost:3000/todos/${props.id}`, {
@@ -96,14 +94,17 @@ function ToDoListItems(props){
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    "completed": checkedComplete
+                    "completed": complete
                 })
 
             })
 
             const responseDataAPI = await responseAPI.json();
             if(!responseAPI.ok){
-                console.log(responseDataAPI.error)
+                console.log(responseDataAPI.error);
+            }
+            else{
+                props.loadToDo();
             }
 
         }
@@ -114,7 +115,10 @@ function ToDoListItems(props){
 
     return (
         <div className='row-of-todo'>
-            <input type="checkbox" className="todo-items" checked={checkedComplete} onChange={(event) => {setCheckedComplete(event.target.checked)}}/>
+            <input type="checkbox" className="todo-items" checked={props.toDo.completed} onChange={(event) => {
+                const complete = event.target.checked;
+                completeToDoItem(complete);
+            }}/>
             <p className='item-label' hidden={itemLabelHidden}>{props.toDo.title} - {props.toDo.description}</p>
             <div className='edit-form' hidden={editFormHidden}>
                 <input type="text" className='edit-text' value={newTitle} onChange={(event) => {setNewTitle(event.target.value)}}/>

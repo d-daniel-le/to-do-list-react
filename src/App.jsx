@@ -14,6 +14,8 @@ function App() {
   const [toDoHidden, setToDoHidden] = useState(true)
   const [messageHidden, setMessageHidden] = useState(true)
 
+  localStorage.setItem("authToken",token)
+
 
   // localStorage.setItem(token)
 
