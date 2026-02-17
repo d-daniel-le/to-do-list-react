@@ -22,3 +22,16 @@
 input[type="checkbox"]{
     border: .5px solid #76BFF7;
 }
+
+.edit-form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.edit-form .edit-text{
+    margin-top: 5px;
+    width: 100px;
+    padding: 5px;
+}
