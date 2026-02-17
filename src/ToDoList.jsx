@@ -105,7 +105,7 @@ function ToDoList(props){
 
             <div className="list-of-todo" hidden={listOfToDoHidden}>
                 <p className='item-message' hidden={itemMessageHidden}>{itemMessage}</p>
-                {toDo.map(toDoItem => {return<ToDoListItems key={toDoItem.id} toDo={toDoItem}/>})}
+                {toDo.map(toDoItem => {return<ToDoListItems key={toDoItem.id} id={toDoItem.id} toDo={toDoItem} token={props.token} loadToDo={loadToDo}/>})}
             </div>
         </form>
     )
