@@ -4,7 +4,6 @@ import { useState } from 'react';
 function Register(props){ 
     const [username, getUsername] = useState("");
     const [password, getPassword] = useState("");
-    const [hidden, setHidden] = useState(true);
     const [regErrorMessage, setRegErrorMesssage] = useState("");
 
     const registerUser  = async (event) => {
@@ -25,10 +24,10 @@ function Register(props){
             if (!responseAPI.ok){
                 const errorInfo = await responseAPI.json();
                 setRegErrorMesssage(errorInfo.error ||"Registration is not successful");
-                setHidden(false);
+                props.setRegHidden(false);
             }
             else{
-                setHidden(true);
+                props.setRegHidden(true);
                 const responseDataAPI = await responseAPI.json();
                 props.setToken(responseDataAPI.token);
                 props.setMessage("User has been created successfully");
@@ -42,7 +41,7 @@ function Register(props){
         }
         catch(error){
             setRegErrorMesssage("Uh oh Network Error it seems. Is your server running?");
-            setHidden(false);
+            props.setRegHidden(false);
             console.log(error);
         }
     };
@@ -53,7 +52,7 @@ function Register(props){
 
             <h2>Register</h2>
 
-            <p className="register-error" hidden={hidden}>{regErrorMessage}</p>
+            <p className="register-error" hidden={props.regHidden}>{regErrorMessage}</p>
 
             <div className="register-username">
                 <p>Username/Email</p>

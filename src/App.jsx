@@ -13,16 +13,14 @@ function App() {
   const [logRegHidden, setLogRegHidden] = useState(false)
   const [toDoHidden, setToDoHidden] = useState(true)
   const [messageHidden, setMessageHidden] = useState(true)
+  const [regHidden, setRegHidden] = useState(true);
 
   localStorage.setItem("authToken",token)
 
-
-  // localStorage.setItem(token)
-
   return (
     <>
-      <Header headerLoginBtn={headerLoginBtn} headerLogoutBtn={headerLogoutBtn} setLogRegHidden={setLogRegHidden} token={token} setToken={setToken} setToDoHidden={setToDoHidden} setHeaderLoginBtn={setHeaderLoginBtn} setHeaderLogoutBtn={setHeaderLogoutBtn} setMessageHidden={setMessageHidden}/>
-      <LoginRegister setMessage={setMessage} token={token} setToken={setToken} logRegHidden={logRegHidden} setLogRegHidden={setLogRegHidden} setHeaderLoginBtn={setHeaderLoginBtn} setHeaderLogoutBtn={setHeaderLogoutBtn} setToDoHidden={setToDoHidden} setMessageHidden={setMessageHidden}/>      
+      <Header headerLoginBtn={headerLoginBtn} headerLogoutBtn={headerLogoutBtn} setLogRegHidden={setLogRegHidden} token={token} setToken={setToken} setToDoHidden={setToDoHidden} setHeaderLoginBtn={setHeaderLoginBtn} setHeaderLogoutBtn={setHeaderLogoutBtn} setMessageHidden={setMessageHidden}regHidden={regHidden} setRegHidden={setRegHidden}/>
+      <LoginRegister setMessage={setMessage} token={token} setToken={setToken} logRegHidden={logRegHidden} setLogRegHidden={setLogRegHidden} setHeaderLoginBtn={setHeaderLoginBtn} setHeaderLogoutBtn={setHeaderLogoutBtn} setToDoHidden={setToDoHidden} setMessageHidden={setMessageHidden}regHidden={regHidden} setRegHidden={setRegHidden}/>      
       <Message message={message} messageHidden={messageHidden} setLogRegHidden={setLogRegHidden} setToDoHidden={setToDoHidden} setMessageHidden={setMessageHidden}/>
       <ToDoList token={token} toDoHidden={toDoHidden}/>
     </>

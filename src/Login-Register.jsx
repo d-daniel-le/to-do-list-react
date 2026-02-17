@@ -12,7 +12,7 @@ function LoginRegister(props){
 
             <p>OR</p>
             
-            <Register setMessage={props.setMessage} token={props.token} setToken={props.setToken} setLogRegHidden={props.setLogRegHidden} setHeaderLoginBtn={props.setHeaderLoginBtn} setHeaderLogoutBtn={props.setHeaderLogoutBtn} setToDoHidden={props.setToDoHidden} setMessageHidden={props.setMessageHidden}/>
+            <Register setMessage={props.setMessage} token={props.token} setToken={props.setToken} setLogRegHidden={props.setLogRegHidden} setHeaderLoginBtn={props.setHeaderLoginBtn} setHeaderLogoutBtn={props.setHeaderLogoutBtn} setToDoHidden={props.setToDoHidden} setMessageHidden={props.setMessageHidden} regHidden={props.regHidden} setRegHidden={props.setRegHidden}/>
 
 
         </div>

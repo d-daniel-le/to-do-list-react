@@ -28,6 +28,7 @@ function Header(props){
                 props.setMessageHidden(true);
                 props.setHeaderLoginBtn(false);
                 props.setHeaderLogoutBtn(true);
+                props.setRegHidden(true);
 
             }
         }
