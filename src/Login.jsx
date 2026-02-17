@@ -36,6 +36,7 @@ function Login(props){
                 props.setHeaderLoginBtn(true);
                 props.setHeaderLogoutBtn(false);
                 props.setLogRegHidden(true);
+                setHidden(true);
             }
             
         }
