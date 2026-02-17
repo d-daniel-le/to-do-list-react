@@ -40,7 +40,7 @@ function Login(props){
             
         }
         catch (error){
-            setRegErrorMesssage("Uh oh Network Error it seems. Is your server running?");
+            setLogErrorMesssage("Uh oh Network Error it seems. Is your server running?");
             setHidden(false);
             console.log(error);
         }
