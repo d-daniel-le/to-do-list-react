@@ -41,7 +41,7 @@ function Login(props){
             
         }
         catch (error){
-            setLogErrorMesssage("Uh oh Network Error it seems. Is your server running?");
+            setLogErrorMessage("Uh oh Network Error it seems. Is your server running?");
             setHidden(false);
             console.log(error);
         }

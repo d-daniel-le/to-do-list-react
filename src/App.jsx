@@ -42,8 +42,8 @@ function App() {
   },[token])
   return (
     <>
-      <Header headerLoginBtn={headerLoginBtn} headerLogoutBtn={headerLogoutBtn} setLogRegHidden={setLogRegHidden} token={token} setToken={setToken} setToDoHidden={setToDoHidden} setHeaderLoginBtn={setHeaderLoginBtn} setHeaderLogoutBtn={setHeaderLogoutBtn} setMessageHidden={setMessageHidden}regHidden={regHidden} setRegHidden={setRegHidden}/>
-      <LoginRegister setMessage={setMessage} token={token} setToken={setToken} logRegHidden={logRegHidden} setLogRegHidden={setLogRegHidden} setHeaderLoginBtn={setHeaderLoginBtn} setHeaderLogoutBtn={setHeaderLogoutBtn} setToDoHidden={setToDoHidden} setMessageHidden={setMessageHidden}regHidden={regHidden} setRegHidden={setRegHidden}/>      
+      <Header headerLoginBtn={headerLoginBtn} headerLogoutBtn={headerLogoutBtn} setLogRegHidden={setLogRegHidden} token={token} setToken={setToken} setToDoHidden={setToDoHidden} setHeaderLoginBtn={setHeaderLoginBtn} setHeaderLogoutBtn={setHeaderLogoutBtn} setMessageHidden={setMessageHidden} regHidden={regHidden} setRegHidden={setRegHidden}/>
+      <LoginRegister setMessage={setMessage} token={token} setToken={setToken} logRegHidden={logRegHidden} setLogRegHidden={setLogRegHidden} setHeaderLoginBtn={setHeaderLoginBtn} setHeaderLogoutBtn={setHeaderLogoutBtn} setToDoHidden={setToDoHidden} setMessageHidden={setMessageHidden} regHidden={regHidden} setRegHidden={setRegHidden}/>      
       <Message message={message} messageHidden={messageHidden} setLogRegHidden={setLogRegHidden} setToDoHidden={setToDoHidden} setMessageHidden={setMessageHidden}/>
       <ToDoList token={token} toDoHidden={toDoHidden}/>
     </>
