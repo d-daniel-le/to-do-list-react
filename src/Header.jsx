@@ -29,7 +29,7 @@ function Header(props){
                 props.setHeaderLoginBtn(false);
                 props.setHeaderLogoutBtn(true);
                 props.setRegHidden(true);
-
+                localStorage.removeItem("authToken");
             }
         }
         catch(error){

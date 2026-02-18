@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Header from './Header'
 import LoginRegister from './Login-Register'
 import Message from './Message'
@@ -15,8 +15,31 @@ function App() {
   const [messageHidden, setMessageHidden] = useState(true)
   const [regHidden, setRegHidden] = useState(true);
 
-  localStorage.setItem("authToken",token)
-
+  useEffect(()=>{
+    const checkToken = localStorage.getItem("authToken");  
+    if (checkToken){
+      setToken(checkToken);
+      setToDoHidden(false);
+      setMessageHidden(true);
+      setLogRegHidden(true);
+      setHeaderLoginBtn(true);
+      setHeaderLogoutBtn(false);
+    }
+    else{
+      setToDoHidden(true);
+      setMessageHidden(true);
+      setLogRegHidden(false);
+      setHeaderLoginBtn(false);
+      setHeaderLogoutBtn(true);
+      
+    }  
+    
+  },[])
+  useEffect( () => {
+    if (token){
+      localStorage.setItem("authToken",token);
+    }
+  },[token])
   return (
     <>
       <Header headerLoginBtn={headerLoginBtn} headerLogoutBtn={headerLogoutBtn} setLogRegHidden={setLogRegHidden} token={token} setToken={setToken} setToDoHidden={setToDoHidden} setHeaderLoginBtn={setHeaderLoginBtn} setHeaderLogoutBtn={setHeaderLogoutBtn} setMessageHidden={setMessageHidden}regHidden={regHidden} setRegHidden={setRegHidden}/>
