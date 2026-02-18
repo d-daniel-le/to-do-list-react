@@ -88,26 +88,29 @@ function ToDoList(props){
     }
 
     return (
-        <form className="to-do" hidden={props.toDoHidden} onSubmit={createToDo}>
-            <h2>To Do List</h2>
+        <div className="to-do" hidden={props.toDoHidden}>
+            <form className='create-to-do' onSubmit={createToDo}>
+                <h2>To Do List</h2>
 
-            <div className="title">
-                <p>Title</p>
-                <input type="text" placeholder="Title" value={title} onChange={(event)=>{setTitle(event.target.value)}}/>                
-            </div>
+                <div className="title">
+                    <p>Title</p>
+                    <input type="text" placeholder="Title" value={title} onChange={(event)=>{setTitle(event.target.value)}}/>                
+                </div>
 
-            <div className="description">
-                <p>Description</p>                
-                <input type="text" placeholder="Description" value={description} onChange={(event)=>{setDescription(event.target.value)}}/>
-            </div>
+                <div className="description">
+                    <p>Description</p>                
+                    <input type="text" placeholder="Description" value={description} onChange={(event)=>{setDescription(event.target.value)}}/>
+                </div>
 
-            <button className="create-btn">Create</button>
+                <button className="create-btn">Create</button>
+
+            </form>
 
             <div className="list-of-todo" hidden={listOfToDoHidden}>
                 <p className='item-message' hidden={itemMessageHidden}>{itemMessage}</p>
                 {toDo.map(toDoItem => {return<ToDoListItems key={toDoItem.id} id={toDoItem.id} toDo={toDoItem} token={props.token} loadToDo={loadToDo}/>})}
             </div>
-        </form>
+        </div>
     )
 }
 

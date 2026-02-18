@@ -120,13 +120,13 @@ function ToDoListItems(props){
                 completeToDoItem(complete);
             }}/>
             <p className='item-label' hidden={itemLabelHidden}>{props.toDo.title} - {props.toDo.description}</p>
-            <div className='edit-form' hidden={editFormHidden}>
+            <form className='edit-form' onSubmit={(event)=> {editToDoItem(event)}} hidden={editFormHidden}>
                 <input type="text" className='edit-text' value={newTitle} onChange={(event) => {setNewTitle(event.target.value)}}/>
                 -
                 <input type="text" className='edit-text' value={newDescription} onChange={(event) => {setNewDescription(event.target.value)}}/>
-                <button type='button' onClick={(event)=> {editToDoItem(event)}}>Save</button>
+                <button type='submit'>Save</button>
                 <button type='button'onClick={cancelBtn}>Cancel</button>
-            </div>
+            </form>
             <button type='button' onClick={deleteToDoItem} hidden={deleteHidden}>Delete</button>
             <button type='button' onClick={editBtn} hidden={editHidden}>Edit</button>
         </div>

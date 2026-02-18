@@ -11,3 +11,10 @@
 .to-do .list-of-todo{
     margin-top: 10%;
 }
+
+.to-do .create-to-do .create-btn{
+    width: 500px;
+}
+.to-do .create-to-do input{
+    width: 480px;
+}
